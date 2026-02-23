@@ -94,7 +94,7 @@
 
     /* SINALIZAÇÃO 2: COR DE FUNDO E LARGURA DO BOTÃO              */
     <div id="startScreen">
-        <h2 style="margin-bottom: 30px;">Aniversário do Lucca</h2>
+        <h2 style="margin-bottom: 30px;">Aniversário do Matheu</h2>
         
         <button id="startBtn" 
                 class="btn-main" 
@@ -202,17 +202,17 @@
         async function shareAndSave() {
             const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
             const blob = await (await fetch(dataUrl)).blob();
-            const file = new File([blob], 'foto_lucca.jpg', { type: 'image/jpeg' });
+            const file = new File([blob], 'foto_lmatheus.jpg', { type: 'image/jpeg' });
             if (navigator.share) {
                 try {
-                    await navigator.share({ files: [file], title: 'Foto Lucca 1 Ano' });
+                    await navigator.share({ files: [file], title: 'Foto Matheus' });
                 } catch (err) { downloadFallback(dataUrl); }
             } else { downloadFallback(dataUrl); }
         }
 
         function downloadFallback(url) {
             const link = document.createElement('a');
-            link.href = url; link.download = 'foto_lucca.jpg';
+            link.href = url; link.download = 'foto_matheus.jpg';
             link.click();
         }
 
